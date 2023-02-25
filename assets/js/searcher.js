@@ -19,7 +19,7 @@ filterbtn.addEventListener('click', () => {
   if (search === '') {
     renderHTML(nodes);
   } else {
-    const result = nodes.filter(node => node.product === search || node.category === search);
+    const result = nodes.filter(node => node.product.includes(search) || node.category.includes(search));
     renderHTML(result);
   };
 });
@@ -55,7 +55,7 @@ async function addNode() {
     const price = product.getElementsByTagName('price')[0].innerHTML;
     const src = product.getElementsByTagName('src')[0].innerHTML;
     const type = product.getElementsByTagName('type')[0].innerHTML;
-    const HTML = createHTML(name, parseInt(price), src, type);
+    const HTML = createHTML(name, price, src, type);
     nodes.push({ product: name, category: type, body: HTML });
   };
 
@@ -67,7 +67,7 @@ function createHTML(name, price, src, type) {
       <div class="card card-blog card-plain">
         <div class="card-header p-0 mt-n4 mx-3">
           <a class="d-block shadow-xl border-radius-xl">
-            <img src="${src}" alt="${name}" class="img-fluid shadow border-radius-xl">
+            <img loading="lazy", src="${src}" alt="${name}" class="img-fluid shadow border-radius-xl">
           </a>
         </div>
         <div class="card-body p-3">
@@ -78,7 +78,7 @@ function createHTML(name, price, src, type) {
             </h5>
           </a>
           <p class="mb-4 text-sm">
-            <b>Price: </b> $${price.toFixed(2)}
+            <b>Price: </b> $${parseFloat(price).toFixed(2)}
           </p>
         </div>
       </div>
