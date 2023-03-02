@@ -1,6 +1,12 @@
 
-const JSON = 'https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.json';
-const XML = 'https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.xml';
+// URLs anteriores.
+// const JSON = 'https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.json';
+// const XML = 'https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.xml';
+
+// Nuevas URLs.
+const JSON = 'https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products.json';
+const XML = 'https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products.xml';
+
 let nodes = [];
 let search = '';
 
